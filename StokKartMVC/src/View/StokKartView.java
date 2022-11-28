@@ -58,8 +58,15 @@ public class StokKartView extends JFrame {
     /**
      * Launch the application.
      */
+    
+    public JButton btnNewButton;
+    public JButton btnNewButton_1;
+    public JButton btnNewButton_2;
+    public JButton btnNewButton_3;
+    public JButton btnNewButton_4;
    
 
+    
     /**
      * Create the frame.
      */
@@ -74,43 +81,16 @@ public class StokKartView extends JFrame {
 	
 	
 	
-	JButton btnNewButton = new JButton("Ara");
-	btnNewButton.addActionListener(new ActionListener() {
-		public void actionPerformed(ActionEvent e) {
-		    StokKartController.Ara();
-		}
-	});
+	btnNewButton = new JButton("Ara");	
 	
-	JButton btnNewButton_1 = new JButton("Ekle");
-	btnNewButton_1.addActionListener(new ActionListener() {
-		public void actionPerformed(ActionEvent e) {
-		    StokKartController.Ekle();
-		    StokKartController.Listele();
-		}
-	});
+	btnNewButton_1 = new JButton("Ekle");
 	
-	JButton btnNewButton_2 = new JButton("Güncelle");
-	btnNewButton_2.addActionListener(new ActionListener() {
-		public void actionPerformed(ActionEvent e) {
-		    StokKartController.Guncelle();
-		    StokKartController.Listele();
-		}
-	});
+	btnNewButton_2 = new JButton("Güncelle");	
 	
-	JButton btnNewButton_3 = new JButton("Listele");
-	btnNewButton_3.addActionListener(new ActionListener() {
-		public void actionPerformed(ActionEvent e) {
-		    StokKartController.Listele();
-		}
-	});
+	btnNewButton_3 = new JButton("Listele");	
 	
-	JButton btnNewButton_4 = new JButton("Sil");
-	btnNewButton_4.addActionListener(new ActionListener() {
-		public void actionPerformed(ActionEvent e) {
-		    StokKartController.Sil();
-		    StokKartController.Listele();
-		}
-	});
+	btnNewButton_4 = new JButton("Sil");
+	
 	btnNewButton_4.setHorizontalAlignment(SwingConstants.LEADING);
 	
 	JLabel lblNewLabel = new JLabel("Stok Kodu");

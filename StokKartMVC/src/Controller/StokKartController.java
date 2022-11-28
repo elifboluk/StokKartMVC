@@ -19,13 +19,23 @@ import javax.swing.table.DefaultTableModel;
 import connect.DatabaseConnect;
 
 public class StokKartController {
+    
+    private StokKartView view;
+    
 
     public static DefaultTableModel modelim;
     static Object[] kolonlar = { "stok_kodu", "stok_adi", "stok_tipi", "birimi", "barkodu", "kdv_tipi", "aciklama", "olusturma_tarihi" };
     static Object[] satirlar = new Object[8];
     
 
-    public static void Ekle() {
+    public StokKartController(StokKartView view) {
+	super();
+	this.view=view;	
+	
+	// TODO Auto-generated constructor stub
+    }
+
+    public void Ekle() {
 	StokKartModel.stok_kodu = StokKartView.stokkodu.getText();
 	StokKartModel.stok_adi = StokKartView.stokadi.getText();
 	StokKartModel.stok_tipi = Integer.valueOf(StokKartView.stoktipi.getSelectedItem().toString());
@@ -129,6 +139,40 @@ public class StokKartController {
 	StokKartModel.olusturma_tarihi = Date.valueOf(StokKartView.stokolusturmatarihi.getText());
 
 	StokKartModel.insert();
+    }
+
+    public void execute() {
+	view.btnNewButton_1.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+		    Ekle();
+		    Listele();
+		}	
+	});	
+	// TODO Auto-generated method stub
+	view.btnNewButton_2.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+		    Guncelle();
+		    Listele();
+		}	
+	});	
+	view.btnNewButton_4.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+		    Sil();
+		    Listele();
+		}	
+	});	
+	view.btnNewButton_3.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {		    
+		    Listele();
+		}	
+	});
+	
+	view.btnNewButton.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {		    
+		    Ara();
+		}	
+	});
+		
     }
 
 }

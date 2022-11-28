@@ -25,6 +25,8 @@ public class StokKartMain {
 	    public void run() {
 		try {
 		    StokKartView frame = new StokKartView();
+		    StokKartController controller=new StokKartController(frame);
+		    controller.execute();
 		    frame.setVisible(true);
 		} catch (Exception e) {
 		    e.printStackTrace();
